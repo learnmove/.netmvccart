@@ -1,0 +1,15 @@
+﻿@model ShopingCart.Models.Category
+@{
+    ViewBag.Title = "Browse";
+}
+
+<h2>Browse</h2>
+<ul>
+@foreach (var item in Model.Items)
+{
+    <li>
+        @item.Title
+        @Html.ActionLink("詳細", "Detail",new { id=item.ItemId})
+    </li>
+}
+</ul>

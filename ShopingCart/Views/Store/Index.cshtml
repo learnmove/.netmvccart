@@ -1,0 +1,14 @@
+﻿@using ShopingCart.Models
+@model IEnumerable<Category>
+@{
+    ViewBag.Title = "分類";
+}
+
+<h2>分類</h2>
+
+@foreach(var c in Model)
+{
+    
+    @Html.ActionLink(c.Name,"Detail",new { id=c.CategoryId},null)
+    <br />
+}

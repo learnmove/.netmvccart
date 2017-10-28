@@ -1,0 +1,13 @@
+﻿@model ShopingCart.Models.Category
+@{
+    ViewBag.Title = "Detail";
+}
+
+<h2>Detail</h2>
+@foreach(var i in Model.Items)
+{
+    @i.Title
+    <img src="@i.ItemArtUrl" alt="" />
+    @Html.ActionLink("加入購物車", "AddToCart", "ShoppingCart", new { id = i.ItemId }, "")
+    <br />
+}

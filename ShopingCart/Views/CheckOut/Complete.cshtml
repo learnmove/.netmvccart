@@ -1,0 +1,38 @@
+﻿@model IEnumerable<ShopingCart.Models.Order>
+    @foreach(var order in Model)
+    {
+         <table class="table table-bordered">
+             <thead>
+
+                 <th>訂單編號</th>
+             <th>總價</th>
+
+             </thead>
+             <tbody>
+                 <tr>
+                     <td>
+                         @order.OrderId
+                     </td>
+                     <td>
+                         @order.Total
+                     </td>
+                     <td>
+                         
+                     </td>
+                 </tr>
+             </tbody>
+            
+
+         </table>
+        <div>
+            物品清單
+            @foreach (var item in order.OrderDetail)
+            {
+                <div>
+                    名稱:  @item.Item.Title 數量 @item.Quantity
+                </div>
+
+            }
+        </div>
+    }
+   
